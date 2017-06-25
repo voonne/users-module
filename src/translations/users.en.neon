@@ -17,6 +17,17 @@ permissions:
 	update: "Update"
 	remove: "Remove"
 
+createForm:
+	title: "User"
+	email: "Email"
+	password: "Password"
+	passwordFormat: "Please, make sure your password is at least 8 characters long and contains a number of small and large letters."
+	passwordHint: "The password must be at least 8 characters long and must contain the number of small and large letters."
+	roles: "Roles"
+	submit: "Create user"
+	created: "The new user was created successfully."
+	duplicateEntry: "User with this email is already exists."
+
 usersTable:
 	title: "Users"
 	email: "Email"

@@ -17,6 +17,17 @@ permissions:
 	update: "Upravit"
 	remove: "Smazat"
 
+createForm:
+	title: "Uživatel"
+	email: "Email"
+	password: "Heslo"
+	passwordFormat: "Prosím, vyplňte heslo dlouhé alespoň 8 znaků a obsahující číslo, velké a méle písmeno."
+	passwordHint: "Heslo musí mít alespoň 8 znaků a obsahující číslo, velké a méle písmeno."
+	roles: "Role"
+	submit: "Vytvořit uživatele"
+	created: "Uživatel byl úspěšně vytvořen."
+	duplicateEntry: "Uživatel s tímto emailem již existuje."
+
 usersTable:
 	title: "Uživatelé"
 	email: "Email"
