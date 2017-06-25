@@ -28,6 +28,14 @@ createForm:
 	created: "The new user was created successfully."
 	duplicateEntry: "User with this email is already exists."
 
+updateForm:
+	title: "User"
+	email: "Email"
+	roles: "Roles"
+	submit: "Update user"
+	updated: "The user was successfully updated."
+	duplicateEntry: "User with this email is already exists."
+
 usersTable:
 	title: "Users"
 	email: "Email"

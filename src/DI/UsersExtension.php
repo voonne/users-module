@@ -17,6 +17,7 @@ use Voonne\UsersModule\Pages\CreatePage;
 use Voonne\UsersModule\Pages\DefaultPage;
 use Voonne\UsersModule\Pages\UpdatePage;
 use Voonne\UsersModule\Panels\CreateFormPanel;
+use Voonne\UsersModule\Panels\UpdateFormPanel;
 use Voonne\UsersModule\Panels\UsersTablePanel;
 use Voonne\Voonne\InvalidStateException;
 
@@ -50,10 +51,14 @@ class UsersExtension extends CompilerExtension
 			->addSetup('addPanel', ['@' . $this->prefix('createForm'), [Layout::POSITION_CENTER]]);
 
 		$builder->addDefinition($this->prefix('updatePage'))
-			->setClass(UpdatePage::class);
+			->setClass(UpdatePage::class)
+			->addSetup('addPanel', ['@' . $this->prefix('updateForm'), [Layout::POSITION_CENTER]]);
 
 		$builder->addDefinition($this->prefix('createForm'))
 			->setClass(CreateFormPanel::class);
+
+		$builder->addDefinition($this->prefix('updateForm'))
+			->setClass(UpdateFormPanel::class);
 
 		$builder->addDefinition($this->prefix('usersTable'))
 			->setClass(UsersTablePanel::class);
