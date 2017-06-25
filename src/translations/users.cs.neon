@@ -1,0 +1,18 @@
+title: "Uživatelé"
+
+default:
+	title: "Přehled uživatelů"
+
+create:
+	title: "Vytvořit uživatele"
+
+update:
+	title: "Upravit uživatele"
+	userNotFound: "Požadovaný uživatel nebyl nalezen."
+
+permissions:
+	name: "Modul uživatelé"
+	create: "Přidat"
+	view: "Zobrazit"
+	update: "Upravit"
+	remove: "Smazat"

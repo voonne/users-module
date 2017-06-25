@@ -1,0 +1,18 @@
+title: "User"
+
+default:
+	title: "All users"
+
+create:
+	title: "Create user"
+
+update:
+	title: "Update user"
+	userNotFound: "Požadovaný uživatel nebyl nalezen."
+
+permissions:
+	name: "users module"
+	create: "Create"
+	view: "View"
+	update: "Update"
+	remove: "Remove"
