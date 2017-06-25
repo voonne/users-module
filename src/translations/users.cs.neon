@@ -16,3 +16,12 @@ permissions:
 	view: "Zobrazit"
 	update: "Upravit"
 	remove: "Smazat"
+
+usersTable:
+	title: "Uživatelé"
+	email: "Email"
+	createdAt: "Vytvořen v"
+	update: "Upravit"
+	remove: "Smazat"
+	removed: "Uživatel byl úspěšně smazán."
+	userNotFound: "Požadovaný uživatel nebyl nalezen."

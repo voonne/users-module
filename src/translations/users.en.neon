@@ -8,11 +8,20 @@ create:
 
 update:
 	title: "Update user"
-	userNotFound: "Požadovaný uživatel nebyl nalezen."
+	userNotFound: "The User was not found."
 
 permissions:
-	name: "users module"
+	name: "Users module"
 	create: "Create"
 	view: "View"
 	update: "Update"
 	remove: "Remove"
+
+usersTable:
+	title: "Users"
+	email: "Email"
+	createdAt: "Created at"
+	update: "Update"
+	remove: "Remove"
+	removed: "The user was successfully removed."
+	userNotFound: "The User was not found."

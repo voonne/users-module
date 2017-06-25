@@ -12,9 +12,11 @@ namespace Voonne\UsersModule\DI;
 
 use Kdyby\Translation\Translator;
 use Nette\DI\CompilerExtension;
+use Voonne\Layouts\Layout;
 use Voonne\UsersModule\Pages\CreatePage;
 use Voonne\UsersModule\Pages\DefaultPage;
 use Voonne\UsersModule\Pages\UpdatePage;
+use Voonne\UsersModule\Panels\UsersTablePanel;
 use Voonne\Voonne\InvalidStateException;
 
 
@@ -39,13 +41,17 @@ class UsersExtension extends CompilerExtension
 			->addSetup('addPage', ['users', '@' . $this->prefix('updatePage')]);
 
 		$builder->addDefinition($this->prefix('defaultPage'))
-			->setClass(DefaultPage::class);
+			->setClass(DefaultPage::class)
+			->addSetup('addPanel', ['@' . $this->prefix('usersTable'), [Layout::POSITION_CENTER]]);
 
 		$builder->addDefinition($this->prefix('createPage'))
 			->setClass(CreatePage::class);
 
 		$builder->addDefinition($this->prefix('updatePage'))
 			->setClass(UpdatePage::class);
+
+		$builder->addDefinition($this->prefix('usersTable'))
+			->setClass(UsersTablePanel::class);
 	}
 
 
