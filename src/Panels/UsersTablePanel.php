@@ -10,9 +10,11 @@
 
 namespace Voonne\UsersModule\Panels;
 
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\QueryBuilder;
 use Voonne\Messages\FlashMessage;
 use Voonne\Model\IOException;
+use Voonne\Panels\Panels\TablePanel\Adapters\Doctrine2Adapter;
 use Voonne\Panels\Panels\TablePanel\TablePanel;
 use Voonne\Voonne\Model\Entities\User;
 use Voonne\Voonne\Model\Facades\UserFacade;
@@ -32,13 +34,23 @@ class UsersTablePanel extends TablePanel
 	 */
 	private $userFacade;
 
+	/**
+	 * @var EntityManagerInterface
+	 */
+	private $entityManager;
 
-	public function __construct(UserRepository $userRepository, UserFacade $userFacade)
+
+	public function __construct(
+		UserRepository $userRepository,
+		UserFacade $userFacade,
+		EntityManagerInterface $entityManager
+	)
 	{
 		parent::__construct();
 
 		$this->userRepository = $userRepository;
 		$this->userFacade = $userFacade;
+		$this->entityManager = $entityManager;
 
 		$this->setTitle('voonne-usersModule.usersTable.title');
 	}
@@ -71,13 +83,10 @@ class UsersTablePanel extends TablePanel
 
 		$this->addTemplate(__DIR__ . '/column.latte');
 
-		$this->onQueryCreate[] = function (QueryBuilder $queryBuilder) {
-			$queryBuilder->select('u')
-				->from(User::class, 'u');
-		};
-
 		$this->setDefaultSort('createdAt');
 		$this->setDefaultOrder('DESC');
+
+		$this->setAdapter(new Doctrine2Adapter($this->entityManager->createQueryBuilder()->select('u')->from(User::class, 'u')));
 	}
 
 

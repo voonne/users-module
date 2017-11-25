@@ -8,7 +8,7 @@ create:
 
 update:
 	title: "Update user"
-	userNotFound: "The User was not found."
+	userNotFound: "The user was not found."
 
 permissions:
 	name: "Users module"
@@ -25,7 +25,7 @@ createForm:
 	passwordHint: "The password must be at least 8 characters long and must contain the number of small and large letters."
 	roles: "Roles"
 	submit: "Create user"
-	created: "The new user was created successfully."
+	created: "The new user was successfully created."
 	duplicateEntry: "User with this email is already exists."
 
 updateForm:
@@ -43,4 +43,4 @@ usersTable:
 	update: "Update"
 	remove: "Remove"
 	removed: "The user was successfully removed."
-	userNotFound: "The User was not found."
+	userNotFound: "The user was not found."
