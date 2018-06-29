@@ -50,6 +50,10 @@ class CreateFormPanel extends FormPanel
 		$container->addText('email', 'voonne-usersModule.createForm.email')
 			->setRequired('voonne-form.rules.required');
 
+		$container->addText('firstName', 'voonne-usersModule.createForm.firstName');
+
+		$container->addText('lastName', 'voonne-usersModule.createForm.lastName');
+
 		$container->addPassword('password', 'voonne-usersModule.createForm.password')
 			->setRequired('voonne-form.rules.required')
 			->addRule(Form::PATTERN, 'voonne-usersModule.createForm.passwordFormat', '^.*(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[\d\W]).*$')
@@ -66,7 +70,7 @@ class CreateFormPanel extends FormPanel
 	public function success(Container $container, $values)
 	{
 		try {
-			$user = new User($values->email, $values->password);
+			$user = new User($values->email, $values->password, $values->firstName, $values->lastName);
 
 			foreach ($values->roles as $role) {
 				$user->addRole($this->roleRepository->find($role));

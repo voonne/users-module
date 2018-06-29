@@ -11,7 +11,6 @@
 namespace Voonne\UsersModule\Panels;
 
 use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\ORM\QueryBuilder;
 use Voonne\Messages\FlashMessage;
 use Voonne\Model\IOException;
 use Voonne\Panels\Panels\TablePanel\Adapters\Doctrine2Adapter;
@@ -61,6 +60,10 @@ class UsersTablePanel extends TablePanel
 		parent::beforeRender();
 
 		$this->addColumn('email', 'voonne-usersModule.usersTable.email');
+
+		$this->addColumn('firstName', 'voonne-usersModule.usersTable.firstName');
+
+		$this->addColumn('lastName', 'voonne-usersModule.usersTable.lastName');
 
 		$this->addColumn('createdAt', 'voonne-usersModule.usersTable.createdAt')
 			->setTemplate('datetime');

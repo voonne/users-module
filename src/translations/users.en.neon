@@ -20,6 +20,8 @@ permissions:
 createForm:
 	title: "User"
 	email: "Email"
+	firstName: "First name"
+	lastName: "Last name"
 	password: "Password"
 	passwordFormat: "Please, make sure your password is at least 8 characters long and contains a number of small and large letters."
 	passwordHint: "The password must be at least 8 characters long and must contain the number of small and large letters."
@@ -31,6 +33,8 @@ createForm:
 updateForm:
 	title: "User"
 	email: "Email"
+	firstName: "First name"
+	lastName: "Last name"
 	roles: "Roles"
 	submit: "Update user"
 	updated: "The user was successfully updated."
@@ -39,6 +43,8 @@ updateForm:
 usersTable:
 	title: "Users"
 	email: "Email"
+	firstName: "First name"
+	lastName: "Last name"
 	createdAt: "Created at"
 	update: "Update"
 	remove: "Remove"

@@ -71,6 +71,12 @@ class UpdateFormPanel extends FormPanel
 			->setDefaultValue($this->user->getEmail())
 			->setRequired('voonne-form.rules.required');
 
+		$container->addText('firstName', 'voonne-usersModule.updateForm.firstName')
+			->setDefaultValue($this->user->getFirstName());
+
+		$container->addText('lastName', 'voonne-usersModule.updateForm.lastName')
+			->setDefaultValue($this->user->getLastName());
+
 		$container->addCheckboxList('roles', 'voonne-usersModule.updateForm.roles', $this->getRoles())
 			->setDefaultValue($this->getDefaultRoles());
 
@@ -83,7 +89,7 @@ class UpdateFormPanel extends FormPanel
 	public function success(Container $container, $values)
 	{
 		try {
-			$this->user->update($values->email);
+			$this->user->update($values->email, $values->firstName, $values->lastName);
 
 			foreach ($this->user->getRoles() as $role) {
 				$this->user->removeRole($role);

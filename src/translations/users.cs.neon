@@ -20,6 +20,8 @@ permissions:
 createForm:
 	title: "Uživatel"
 	email: "Email"
+	firstName: "Jméno"
+	lastName: "Příjmení"
 	password: "Heslo"
 	passwordFormat: "Prosím, vyplňte heslo dlouhé alespoň 8 znaků a obsahující číslo, velké a méle písmeno."
 	passwordHint: "Heslo musí mít alespoň 8 znaků a obsahující číslo, velké a méle písmeno."
@@ -31,6 +33,8 @@ createForm:
 updateForm:
 	title: "Uživatel"
 	email: "Email"
+	firstName: "Jméno"
+	lastName: "Příjmení"
 	roles: "Role"
 	submit: "Upravit uživatele"
 	updated: "Uživatel byl úspěšně upraven."
@@ -39,6 +43,8 @@ updateForm:
 usersTable:
 	title: "Uživatelé"
 	email: "Email"
+	firstName: "First name"
+	lastName: "Last name"
 	createdAt: "Vytvořen v"
 	update: "Upravit"
 	remove: "Smazat"
